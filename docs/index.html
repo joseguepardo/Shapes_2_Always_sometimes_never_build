@@ -117,6 +117,7 @@
                 };
 
               }).catch((message) => {
+                console.error('Unity load failed:', message);
                 alert(message);
               });
             };
