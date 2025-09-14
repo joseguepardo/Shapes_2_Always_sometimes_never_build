@@ -7,25 +7,52 @@
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
     <style>
-      /* Fill parent */
-      #unity-container, #unity-canvas { width:100% !important; height:100% !important; }
+      /* Make the document a clean 100% canvas page */
+      html, body {
+        margin: 0;
+        height: 100%;
+        overflow: hidden; /* no inner scrollbars */
+      }
 
-      /* Hide branding, keep fullscreen button */
+      /* Container & canvas fill their parent (the iframe) exactly */
+      #unity-container {
+        position: relative !important;
+        width: 100% !important;
+        height: 100% !important;
+        margin: 0 !important;
+        box-sizing: border-box;
+      }
+
+      #unity-canvas {
+        width: 100% !important;
+        height: 100% !important;
+        display: block;
+      }
+
+      /* Keep the loading bar centered even after our overrides */
+      #unity-loading-bar,
+      #unity-warning {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      /* Keep only the fullscreen button; hide branding */
       #unity-build-title,
-      #unity-logo-title-footer { display:none !important; }
+      #unity-logo-title-footer { display: none !important; }
 
-      /* Make sure the footer (with the button) sits inside the game area */
-      #unity-container { position: relative; }
-      #unity-footer { 
-        position: absolute; 
-        right: 12px; 
-        bottom: 12px; 
-        background: transparent; 
-        padding: 0; 
-        border: 0; 
-        z-index: 5;          /* stay on top of the canvas */
+      #unity-footer {
+        position: absolute;
+        right: 12px;
+        bottom: 12px;
+        z-index: 5;
+        background: transparent;
+        padding: 0;
+        border: 0;
       }
     </style>
+
 
   </head>
   <body>
