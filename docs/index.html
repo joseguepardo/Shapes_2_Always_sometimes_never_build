@@ -7,16 +7,23 @@
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
     <style>
-      /* Let the container expand */
-      #unity-container, #unity-canvas { 
-        width:100% !important; 
-        height:100% !important; 
-      }
+      /* Fill parent */
+      #unity-container, #unity-canvas { width:100% !important; height:100% !important; }
 
-      /* Hide branding only, keep fullscreen button */
-      #unity-build-title, 
-      #unity-logo-title-footer { 
-        display:none !important; 
+      /* Hide branding, keep fullscreen button */
+      #unity-build-title,
+      #unity-logo-title-footer { display:none !important; }
+
+      /* Make sure the footer (with the button) sits inside the game area */
+      #unity-container { position: relative; }
+      #unity-footer { 
+        position: absolute; 
+        right: 12px; 
+        bottom: 12px; 
+        background: transparent; 
+        padding: 0; 
+        border: 0; 
+        z-index: 5;          /* stay on top of the canvas */
       }
     </style>
 
