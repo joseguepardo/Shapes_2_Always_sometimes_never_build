@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity Web Player | Shapes_ Always, sometimes, never</title>
+    <title>Unity Web Player | Shapes_AlwaysSometimesNever</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
+      <canvas id="unity-canvas" width=1280 height=720 tabindex="-1"></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
@@ -20,7 +20,7 @@
       <div id="unity-footer">
         <div id="unity-logo-title-footer"></div>
         <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">Shapes_ Always, sometimes, never</div>
+        <div id="unity-build-title">Shapes_AlwaysSometimesNever</div>
       </div>
     </div>
     <script>
@@ -55,15 +55,14 @@
       var loaderUrl = buildUrl + "/docs.loader.js";
       var config = {
         arguments: [],
-        dataUrl: buildUrl + "/docs.data.br",
-        frameworkUrl: buildUrl + "/docs.framework.js.br",
-        codeUrl: buildUrl + "/docs.wasm.br",
+        dataUrl: buildUrl + "/docs.data.unityweb",
+        frameworkUrl: buildUrl + "/docs.framework.js.unityweb",
+        codeUrl: buildUrl + "/docs.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
-        companyName: "DefaultCompany",
-        productName: "Shapes_ Always, sometimes, never",
+        companyName: "MathMathMath",
+        productName: "Shapes_AlwaysSometimesNever",
         productVersion: "0.1.0",
         showBanner: unityShowBanner,
-        decompressionFallback: true
       };
 
       // By default, Unity keeps WebGL canvas render target size matched with
@@ -99,8 +98,8 @@
 
       } else {
         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
-        canvas.style.width = "960px";
-        canvas.style.height = "600px";
+        canvas.style.width = "1280px";
+        canvas.style.height = "720px";
       }
 
       document.querySelector("#unity-loading-bar").style.display = "block";
@@ -117,7 +116,6 @@
                 };
 
               }).catch((message) => {
-                console.error('Unity load failed:', message);
                 alert(message);
               });
             };
