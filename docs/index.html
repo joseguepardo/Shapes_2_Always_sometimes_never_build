@@ -6,6 +6,20 @@
     <title>Unity Web Player | Shapes_AlwaysSometimesNever</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
+    <style>
+      /* Let the container expand */
+      #unity-container, #unity-canvas { 
+        width:100% !important; 
+        height:100% !important; 
+      }
+
+      /* Hide branding only, keep fullscreen button */
+      #unity-build-title, 
+      #unity-logo-title-footer { 
+        display:none !important; 
+      }
+    </style>
+
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
